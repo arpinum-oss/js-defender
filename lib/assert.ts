@@ -1,3 +1,5 @@
+import { is } from './is';
+
 export class Assert {
   private name: string;
   private value: any;
@@ -8,49 +10,49 @@ export class Assert {
   }
 
   public toBePresent() {
-    if (absent(this.value)) {
+    if (is(this.value).absent()) {
       throw new Error(`${this.name} must be present`);
     }
     return this;
   }
 
   public toBeAbsent() {
-    if (!absent(this.value)) {
+    if (is(this.value).present()) {
       throw new Error(`${this.name} must be absent`);
     }
     return this;
   }
 
   public toBeAString() {
-    if (notA('string', this.value)) {
+    if (is(this.value).present() && !is(this.value).aString()) {
       throw new Error(`${this.name} must be a string`);
     }
     return this;
   }
 
   public toBeANumber() {
-    if (notA('number', this.value)) {
+    if (is(this.value).present() && !is(this.value).aNumber()) {
       throw new Error(`${this.name} must be a number`);
     }
     return this;
   }
 
   public toBeADate() {
-    if (notADate(this.value)) {
+    if (is(this.value).present() && !is(this.value).aDate()) {
       throw new Error(`${this.name} must be a date`);
     }
     return this;
   }
 
   public toBeAnArray() {
-    if (notAnArray(this.value)) {
+    if (is(this.value).present() && !is(this.value).anArray()) {
       throw new Error(`${this.name} must be an array`);
     }
     return this;
   }
 
   public toBeAnObject() {
-    if (notA('object', this.value)) {
+    if (is(this.value).present() && !is(this.value).anObject()) {
       throw new Error(`${this.name} must be an object`);
     }
     return this;
@@ -59,26 +61,4 @@ export class Assert {
 
 export function assert(value: any, name = 'value'): Assert {
   return new Assert(value, name);
-}
-
-function notA(type: string, value: any) {
-  return present(value) && typeof value !== type;
-}
-
-function notADate(value: any) {
-  return (
-    present(value) && Object.prototype.toString.call(value) !== '[object Date]'
-  );
-}
-
-function notAnArray(value: any) {
-  return present(value) && !Array.isArray(value);
-}
-
-function absent(value: any) {
-  return value === null || value === undefined;
-}
-
-function present(value: any) {
-  return !absent(value);
 }
