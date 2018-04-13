@@ -18,7 +18,7 @@ export class Is {
   }
 
   public aNumber(): boolean {
-    return typeof this.value === 'number';
+    return typeof this.value === 'number' && !Number.isNaN(this.value);
   }
 
   public aDate(): boolean {

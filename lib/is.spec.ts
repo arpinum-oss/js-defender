@@ -50,6 +50,7 @@ describe('When testing if value is', () => {
 
     it('should be negative when value is not a number', () => {
       expect(is('3').aNumber()).toBeFalsy();
+      expect(is(Number.NaN).aNumber()).toBeFalsy();
     });
   });
 
