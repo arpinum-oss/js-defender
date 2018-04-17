@@ -49,6 +49,22 @@ describe('When asserting', () => {
     });
   });
 
+  describe('to be a boolean', () => {
+    it('should do nothing when value is a boolean', () => {
+      assert(true).toBeABoolean();
+    });
+
+    it('should do nothing when value is a absent', () => {
+      assert(null).toBeABoolean();
+    });
+
+    it('should require value to be a boolean', () => {
+      const assertion = () => assert('true').toBeABoolean();
+
+      expect(assertion).toThrow('value must be a boolean');
+    });
+  });
+
   describe('to be a number', () => {
     it('should do nothing when value is a number', () => {
       assert(3).toBeANumber();
@@ -78,6 +94,22 @@ describe('When asserting', () => {
       const assertion = () => assert(3).toBeADate();
 
       expect(assertion).toThrow('value must be a date');
+    });
+  });
+
+  describe('to be a function', () => {
+    it('should do nothing when value is a function', () => {
+      assert(''.toString).toBeAFunction();
+    });
+
+    it('should do nothing when value is a absent', () => {
+      assert(null).toBeAFunction();
+    });
+
+    it('should require value to be a function', () => {
+      const assertion = () => assert(3).toBeAFunction();
+
+      expect(assertion).toThrow('value must be a function');
     });
   });
 

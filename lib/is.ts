@@ -17,12 +17,20 @@ export class Is {
     return typeof this.value === 'string';
   }
 
+  public aBoolean(): boolean {
+    return typeof this.value === 'boolean';
+  }
+
   public aNumber(): boolean {
     return typeof this.value === 'number' && !Number.isNaN(this.value);
   }
 
   public aDate(): boolean {
     return Object.prototype.toString.call(this.value) === '[object Date]';
+  }
+
+  public aFunction(): boolean {
+    return typeof this.value === 'function';
   }
 
   public anArray(): boolean {

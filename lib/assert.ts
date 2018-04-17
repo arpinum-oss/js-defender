@@ -30,6 +30,13 @@ export class Assert {
     return this;
   }
 
+  public toBeABoolean() {
+    if (is(this.value).present() && !is(this.value).aBoolean()) {
+      throw new Error(`${this.name} must be a boolean`);
+    }
+    return this;
+  }
+
   public toBeANumber() {
     if (is(this.value).present() && !is(this.value).aNumber()) {
       throw new Error(`${this.name} must be a number`);
@@ -40,6 +47,13 @@ export class Assert {
   public toBeADate() {
     if (is(this.value).present() && !is(this.value).aDate()) {
       throw new Error(`${this.name} must be a date`);
+    }
+    return this;
+  }
+
+  public toBeAFunction() {
+    if (is(this.value).present() && !is(this.value).aFunction()) {
+      throw new Error(`${this.name} must be a function`);
     }
     return this;
   }

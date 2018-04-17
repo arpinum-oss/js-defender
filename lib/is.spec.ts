@@ -42,6 +42,17 @@ describe('When testing if value is', () => {
     });
   });
 
+  describe('a boolean', () => {
+    it('should be positive when value is a boolean', () => {
+      expect(is(true).aBoolean()).toBeTruthy();
+      expect(is(false).aBoolean()).toBeTruthy();
+    });
+
+    it('should be negative when value is not a string', () => {
+      expect(is(3).aBoolean()).toBeFalsy();
+    });
+  });
+
   describe('a number', () => {
     it('should be positive when value is a number', () => {
       expect(is(3).aNumber()).toBeTruthy();
@@ -61,6 +72,17 @@ describe('When testing if value is', () => {
 
     it('should be negative when value is not a date', () => {
       expect(is(3).aDate()).toBeFalsy();
+    });
+  });
+
+  describe('a function', () => {
+    it('should be positive when value is a function', () => {
+      expect(is(''.toString).aFunction()).toBeTruthy();
+      expect(is(Array).aFunction()).toBeTruthy();
+    });
+
+    it('should be negative when value is not a string', () => {
+      expect(is(3).aFunction()).toBeFalsy();
     });
   });
 
