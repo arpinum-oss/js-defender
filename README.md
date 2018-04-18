@@ -1,11 +1,9 @@
-**/!\ Work in progress /!\\**
-
 # @arpinum/defender [![Build Status](https://travis-ci.org/arpinum-oss/js-defender.svg?branch=master)](https://travis-ci.org/arpinum-oss/js-defender)
 
 > Every absurdity has a champion to defend it.  
 > <cite>Oliver Goldsmith</cite>
 
-_@arpinum/defender_ does something (todo).
+_@arpinum/defender_ is a collection of assertions to do some runtime type checking.
 
 ## Installation
 
@@ -13,10 +11,22 @@ _@arpinum/defender_ does something (todo).
 npm install @arpinum/defender --save
 ```
 
-## Example
+## Examples
+
+Assertion throwing exception when not satisfied:
 
 ```javascript
-// todo
+const { assert } = require('@arpinum/defender');
+
+assert('hello').toBeANumber(); // throws: value must be a number
+```
+
+Simple validation returning a boolean:
+
+```javascript
+const { is } = require('../build');
+
+is('hello').aNumber(); // false
 ```
 
 More examples in [examples](examples).
