@@ -33,7 +33,7 @@ More examples in [examples](examples).
 
 ## Docs
 
-* [API](docs/api.md)
+- [API](docs/api.md)
 
 ## License
 
