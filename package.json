@@ -1,6 +1,6 @@
 {
   "name": "@arpinum/defender",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Assertions to do some runtime type checking",
   "main": "build/index.js",
   "types": "build/index.d.ts",
