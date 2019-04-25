@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "outDir": "./build",
+    "noEmit": true,
     "target": "es2015",
     "module": "commonjs",
     "declaration": true,
@@ -11,12 +12,6 @@
     "noUnusedParameters": true,
     "lib": ["es2017"]
   },
-  "include": ["./lib/**/*"],
-  "exclude": [
-    "node_modules",
-    "**/*.spec.ts",
-    "**/*.e2e.ts",
-    "**/*.spec.js",
-    "**/tests/*.ts"
-  ]
+  "include": ["./lib/**/*", "./examples/**/*"],
+  "exclude": ["node_modules"]
 }
