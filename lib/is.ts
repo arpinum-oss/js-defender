@@ -14,23 +14,23 @@ export class Is {
   }
 
   public aString(): boolean {
-    return typeof this.value === 'string';
+    return typeof this.value === "string";
   }
 
   public aBoolean(): boolean {
-    return typeof this.value === 'boolean';
+    return typeof this.value === "boolean";
   }
 
   public aNumber(): boolean {
-    return typeof this.value === 'number' && !Number.isNaN(this.value);
+    return typeof this.value === "number" && !Number.isNaN(this.value);
   }
 
   public aDate(): boolean {
-    return Object.prototype.toString.call(this.value) === '[object Date]';
+    return Object.prototype.toString.call(this.value) === "[object Date]";
   }
 
   public aFunction(): boolean {
-    return typeof this.value === 'function';
+    return typeof this.value === "function";
   }
 
   public anArray(): boolean {
@@ -38,7 +38,7 @@ export class Is {
   }
 
   public anObject(): boolean {
-    return typeof this.value === 'object';
+    return typeof this.value === "object";
   }
 }
 

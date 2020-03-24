@@ -17,7 +17,7 @@ assert(3).toBeAbsent(); // ko
 ## String
 
 ```javascript
-assert('hello').toBeAString(); // ok
+assert("hello").toBeAString(); // ok
 assert(3).toBeAString(); // ko
 ```
 
@@ -25,21 +25,21 @@ assert(3).toBeAString(); // ko
 
 ```javascript
 assert(true).toBeABoolean(); // ok
-assert('true').toBeABoolean(); // ko
+assert("true").toBeABoolean(); // ko
 ```
 
 ## Number
 
 ```javascript
 assert(3).toBeANumber(); // ok
-assert('3').toBeANumber(); // ko
+assert("3").toBeANumber(); // ko
 ```
 
 ## Date
 
 ```javascript
 assert(new Date()).toBeADate(); // ok
-assert('2018-01-01').toBeADate(); // ko
+assert("2018-01-01").toBeADate(); // ko
 ```
 
 ## Function
@@ -59,7 +59,7 @@ assert(1).toBeAnArray(); // ko
 ## Object
 
 ```javascript
-assert({ name: 'John' }).toBeAnObject(); // ok
+assert({ name: "John" }).toBeAnObject(); // ok
 assert(true).toBeAnObject(); // ko
 ```
 
@@ -68,7 +68,7 @@ assert(true).toBeAnObject(); // ko
 `assert` function can take `name` as second argument to display this name in error message:
 
 ```javascript
-assert('hello', 'count').toBeANumber(); // throws: count must be a number
+assert("hello", "count").toBeANumber(); // throws: count must be a number
 ```
 
 # Validations
@@ -90,7 +90,7 @@ is(3).absent(); // false
 ## String
 
 ```javascript
-is('hello').aString(); // true
+is("hello").aString(); // true
 is(3).aString(); // false
 ```
 
@@ -98,21 +98,21 @@ is(3).aString(); // false
 
 ```javascript
 is(true).aBoolean(); // true
-is('true').aBoolean(); // false
+is("true").aBoolean(); // false
 ```
 
 ## Number
 
 ```javascript
 is(3).aNumber(); // true
-is('3').aNumber(); // false
+is("3").aNumber(); // false
 ```
 
 ## Date
 
 ```javascript
 is(new Date()).aDate(); // true
-is('2018-01-01').aDate(); // false
+is("2018-01-01").aDate(); // false
 ```
 
 ## Function
@@ -132,6 +132,6 @@ is(1).anArray(); // false
 ## Object
 
 ```javascript
-is({ name: 'John' }).anObject(); // true
+is({ name: "John" }).anObject(); // true
 is(true).anObject(); // false
 ```

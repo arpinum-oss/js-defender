@@ -1,2 +1,2 @@
-export * from './assert';
-export * from './is';
+export * from "./assert";
+export * from "./is";

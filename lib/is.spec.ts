@@ -1,109 +1,109 @@
-import { is } from './is';
+import { is } from "./is";
 
-describe('When testing if value is', () => {
-  describe('present', () => {
-    it('should be positive when value is neither null nor undefined', () => {
+describe("When testing if value is", () => {
+  describe("present", () => {
+    it("should be positive when value is neither null nor undefined", () => {
       expect(is(3).present()).toBeTruthy();
-      expect(is('hello').present()).toBeTruthy();
+      expect(is("hello").present()).toBeTruthy();
       expect(is(0).present()).toBeTruthy();
-      expect(is('').present()).toBeTruthy();
+      expect(is("").present()).toBeTruthy();
       expect(is({}).present()).toBeTruthy();
       expect(is([]).present()).toBeTruthy();
     });
 
-    it('should be negative if value is null', () => {
+    it("should be negative if value is null", () => {
       expect(is(null).present()).toBeFalsy();
     });
 
-    it('should be negative if value is undefined', () => {
+    it("should be negative if value is undefined", () => {
       expect(is(undefined).present()).toBeFalsy();
     });
   });
 
-  describe('absent', () => {
-    it('should be positive when value is null or undefined', () => {
+  describe("absent", () => {
+    it("should be positive when value is null or undefined", () => {
       expect(is(null).absent()).toBeTruthy();
       expect(is(undefined).absent()).toBeTruthy();
     });
 
-    it('should be negative if value is present', () => {
+    it("should be negative if value is present", () => {
       expect(is(3).absent()).toBeFalsy();
     });
   });
 
-  describe('a string', () => {
-    it('should be positive when value is a string', () => {
-      expect(is('hello').aString()).toBeTruthy();
-      expect(is('').aString()).toBeTruthy();
+  describe("a string", () => {
+    it("should be positive when value is a string", () => {
+      expect(is("hello").aString()).toBeTruthy();
+      expect(is("").aString()).toBeTruthy();
     });
 
-    it('should be negative when value is not a string', () => {
+    it("should be negative when value is not a string", () => {
       expect(is(3).aString()).toBeFalsy();
     });
   });
 
-  describe('a boolean', () => {
-    it('should be positive when value is a boolean', () => {
+  describe("a boolean", () => {
+    it("should be positive when value is a boolean", () => {
       expect(is(true).aBoolean()).toBeTruthy();
       expect(is(false).aBoolean()).toBeTruthy();
     });
 
-    it('should be negative when value is not a string', () => {
+    it("should be negative when value is not a string", () => {
       expect(is(3).aBoolean()).toBeFalsy();
     });
   });
 
-  describe('a number', () => {
-    it('should be positive when value is a number', () => {
+  describe("a number", () => {
+    it("should be positive when value is a number", () => {
       expect(is(3).aNumber()).toBeTruthy();
       expect(is(0).aNumber()).toBeTruthy();
     });
 
-    it('should be negative when value is not a number', () => {
-      expect(is('3').aNumber()).toBeFalsy();
+    it("should be negative when value is not a number", () => {
+      expect(is("3").aNumber()).toBeFalsy();
       expect(is(Number.NaN).aNumber()).toBeFalsy();
     });
   });
 
-  describe('a date', () => {
-    it('should be positive when value is a date', () => {
+  describe("a date", () => {
+    it("should be positive when value is a date", () => {
       expect(is(new Date()).aDate()).toBeTruthy();
     });
 
-    it('should be negative when value is not a date', () => {
+    it("should be negative when value is not a date", () => {
       expect(is(3).aDate()).toBeFalsy();
     });
   });
 
-  describe('a function', () => {
-    it('should be positive when value is a function', () => {
-      expect(is(''.toString).aFunction()).toBeTruthy();
+  describe("a function", () => {
+    it("should be positive when value is a function", () => {
+      expect(is("".toString).aFunction()).toBeTruthy();
       expect(is(Array).aFunction()).toBeTruthy();
     });
 
-    it('should be negative when value is not a string', () => {
+    it("should be negative when value is not a string", () => {
       expect(is(3).aFunction()).toBeFalsy();
     });
   });
 
-  describe('an array', () => {
-    it('should be positive when value is an array', () => {
+  describe("an array", () => {
+    it("should be positive when value is an array", () => {
       expect(is([1, 2]).anArray()).toBeTruthy();
       expect(is([]).anArray()).toBeTruthy();
     });
 
-    it('should be negative when value is not an array', () => {
+    it("should be negative when value is not an array", () => {
       expect(is(3).anArray()).toBeFalsy();
     });
   });
 
-  describe('an object', () => {
-    it('should be positive when value is an object', () => {
-      expect(is({ test: 'ok' }).anObject()).toBeTruthy();
+  describe("an object", () => {
+    it("should be positive when value is an object", () => {
+      expect(is({ test: "ok" }).anObject()).toBeTruthy();
       expect(is({}).anObject()).toBeTruthy();
     });
 
-    it('should be negative when value is not an object', () => {
+    it("should be negative when value is not an object", () => {
       expect(is(3).anObject()).toBeFalsy();
     });
   });

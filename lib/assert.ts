@@ -1,4 +1,4 @@
-import { is } from './is';
+import { is } from "./is";
 
 export class Assert {
   private name: string;
@@ -73,6 +73,6 @@ export class Assert {
   }
 }
 
-export function assert(value: any, name = 'value'): Assert {
+export function assert(value: any, name = "value"): Assert {
   return new Assert(value, name);
 }
