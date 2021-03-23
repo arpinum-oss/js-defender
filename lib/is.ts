@@ -1,7 +1,7 @@
 export class Is {
-  private value: any;
+  private value: unknown;
 
-  constructor(value: any) {
+  constructor(value: unknown) {
     this.value = value;
   }
 
@@ -42,6 +42,6 @@ export class Is {
   }
 }
 
-export function is(value: any): Is {
+export function is(value: unknown): Is {
   return new Is(value);
 }
