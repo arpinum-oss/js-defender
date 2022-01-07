@@ -1,4 +1,4 @@
-# @arpinum/defender
+# @arpinum/defender [![Build Status](https://github.com/arpinum-oss/js-defender/workflows/CI/badge.svg)](https://github.com/arpinum-oss/js-defender/actions?query=workflow%3ACI)
 
 > Every absurdity has a champion to defend it.  
 > <cite>Oliver Goldsmith</cite>
