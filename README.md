@@ -1,4 +1,4 @@
-# @arpinum/defender [![Build Status](https://travis-ci.org/arpinum-oss/js-defender.svg?branch=master)](https://travis-ci.org/arpinum-oss/js-defender)
+# @arpinum/defender
 
 > Every absurdity has a champion to defend it.  
 > <cite>Oliver Goldsmith</cite>
