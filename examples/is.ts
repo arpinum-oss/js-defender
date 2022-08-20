@@ -1,6 +1,4 @@
-"use strict";
-
-const { is } = require("../build");
+import { is } from "../lib";
 
 const isNumber = is("hello").aNumber();
 console.log(isNumber); // false

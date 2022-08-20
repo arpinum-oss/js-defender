@@ -15,16 +15,16 @@ npm install @arpinum/defender --save
 
 Assertion throwing exception when not satisfied:
 
-```javascript
-const { assert } = require("@arpinum/defender");
+```ts
+import { assert } from "@arpinum/defender";
 
 assert("hello").toBeANumber(); // throws: value must be a number
 ```
 
 Simple validation returning a boolean:
 
-```javascript
-const { is } = require("../build");
+```ts
+import { is } from "@arpinum/defender";
 
 is("hello").aNumber(); // false
 ```
