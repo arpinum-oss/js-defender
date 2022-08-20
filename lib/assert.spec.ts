@@ -99,7 +99,7 @@ describe("When asserting", () => {
 
   describe("to be a function", () => {
     it("should do nothing when value is a function", () => {
-      assert("".toString).toBeAFunction();
+      assert(() => undefined).toBeAFunction();
     });
 
     it("should do nothing when value is a absent", () => {

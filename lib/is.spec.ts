@@ -77,7 +77,7 @@ describe("When testing if value is", () => {
 
   describe("a function", () => {
     it("should be positive when value is a function", () => {
-      expect(is("".toString).aFunction()).toBeTruthy();
+      expect(is(() => undefined).aFunction()).toBeTruthy();
       expect(is(Array).aFunction()).toBeTruthy();
     });
 
