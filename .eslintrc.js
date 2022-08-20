@@ -15,11 +15,12 @@ module.exports = {
   ignorePatterns: ["build", "coverage", ".eslintrc.js"],
   overrides: [
     {
-      files: ["*.js"],
-      env: {
-        node: true,
+      files: ["**/*.spec.ts", "**/*.e2e.ts"],
+      plugins: ["jest"],
+      rules: {
+        "@typescript-eslint/unbound-method": "off",
+        "jest/unbound-method": "error",
       },
-      rules: { "@typescript-eslint/no-var-requires": "off" },
     },
   ],
 };
